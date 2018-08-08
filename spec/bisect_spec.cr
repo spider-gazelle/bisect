@@ -1,5 +1,5 @@
 require "spec"
-require "../src/bisect"
+require "../src/bisect/ext"
 
 class Tests
   def self.values
