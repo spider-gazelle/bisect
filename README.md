@@ -37,7 +37,7 @@ Core ext
 These methods are also available directly on Arrays
 
 ```ruby
-require "bisect"
+require "bisect/ext"
 a = [1, 2, 4]
 a.insort(3)
 a == [1, 2, 3, 4]
