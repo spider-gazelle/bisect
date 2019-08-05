@@ -32,7 +32,7 @@ module Bisect
     raise ArgumentError.new("lo must be non-negative") if lo < 0
 
     while lo < hi
-      mid = (lo + hi) / 2
+      mid = (lo + hi) // 2
       if x < a[mid]
         hi = mid
       else
@@ -70,7 +70,7 @@ module Bisect
     raise ArgumentError.new("lo must be non-negative") if lo < 0
 
     while lo < hi
-      mid = (lo + hi) / 2
+      mid = (lo + hi) // 2
       if a[mid] < x
         lo = mid + 1
       else
