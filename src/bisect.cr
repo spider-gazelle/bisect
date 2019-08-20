@@ -83,7 +83,7 @@ module Bisect
 
   # Find leftmost value greater than x
   def find_gt(a, x)
-     i = bisect_right(a, x) 
+     i = bisect_right(a, x)
      i != a.size ? a[i] : nil
   end
 

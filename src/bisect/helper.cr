@@ -25,19 +25,19 @@ module Bisect::Helper
     Bisect.bisect_right(self, x, lo, hi)
   end
 
-  def find_gt(x)   
+  def find_gt(x)
     Bisect.find_gt(self, x)
   end
 
-  def find_ge(x)   
+  def find_ge(x)
     Bisect.find_ge(self, x)
   end
 
-  def find_lt(x)   
+  def find_lt(x)
     Bisect.find_lt(self, x)
   end
 
-  def find_le(x)   
+  def find_le(x)
     Bisect.find_le(self, x)
   end
 end
