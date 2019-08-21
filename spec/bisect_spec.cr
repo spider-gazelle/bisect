@@ -146,7 +146,7 @@ describe Bisect do
     scores = [33, 70, 77, 89, 89, 90, 99, 100]
 
     describe ".find_gt" do
-      it "should return left most value greater than x" do
+      it "should return leftmost value greater than x" do
         Bisect.find_gt(scores, 65).should eq 70
         Bisect.find_gt(scores, 70).should eq 77
         Bisect.find_gt(scores, 89).should eq 90
@@ -156,7 +156,7 @@ describe Bisect do
         scores.find_gt(89).should eq 90
       end
 
-      it "should return nil if value greatr than x does not exist" do
+      it "should return nil if value greater than x does not exist" do
         Bisect.find_gt(scores, 101).should be_nil
 
         scores.find_gt(101).should be_nil
@@ -164,7 +164,7 @@ describe Bisect do
     end
 
     describe ".find_ge" do
-      it "should return left most value greater than or equal to x" do
+      it "should return leftmost value greater than or equal to x" do
         Bisect.find_ge(scores, 65).should eq 70
         Bisect.find_ge(scores, 70).should eq 70
         Bisect.find_ge(scores, 89).should eq 89
@@ -192,7 +192,7 @@ describe Bisect do
         scores.find_lt(89).should eq 77
       end
 
-      it "raises an error if value less than x does not exist" do
+      it "sould return nil if value less than x does not exist" do
         Bisect.find_lt(scores, 32).should be_nil
 
         scores.find_lt(32).should be_nil
