@@ -141,4 +141,81 @@ describe Bisect do
       end
     end
   end
+
+  describe "searching sorted arrays" do
+    scores = [33, 70, 77, 89, 89, 90, 99, 100]
+
+    describe ".find_gt" do
+      it "should return leftmost value greater than x" do
+        Bisect.find_gt(scores, 65).should eq 70
+        Bisect.find_gt(scores, 70).should eq 77
+        Bisect.find_gt(scores, 89).should eq 90
+
+        scores.find_gt(65).should eq 70
+        scores.find_gt(70).should eq 77
+        scores.find_gt(89).should eq 90
+      end
+
+      it "should return nil if value greater than x does not exist" do
+        Bisect.find_gt(scores, 101).should be_nil
+
+        scores.find_gt(101).should be_nil
+      end
+    end
+
+    describe ".find_ge" do
+      it "should return leftmost value greater than or equal to x" do
+        Bisect.find_ge(scores, 65).should eq 70
+        Bisect.find_ge(scores, 70).should eq 70
+        Bisect.find_ge(scores, 89).should eq 89
+
+        scores.find_ge(65).should eq 70
+        scores.find_ge(70).should eq 70
+        scores.find_ge(89).should eq 89
+      end
+
+      it "should return nil if value greater than or equal to x does not exist" do
+        Bisect.find_ge(scores, 101).should be_nil
+
+        scores.find_ge(101).should be_nil
+      end
+    end
+
+    describe ".find_lt" do
+      it "should return rightmost value less than x" do
+        Bisect.find_lt(scores, 65).should eq 33
+        Bisect.find_lt(scores, 70).should eq 33
+        Bisect.find_lt(scores, 89).should eq 77
+
+        scores.find_lt(65).should eq 33
+        scores.find_lt(70).should eq 33
+        scores.find_lt(89).should eq 77
+      end
+
+      it "sould return nil if value less than x does not exist" do
+        Bisect.find_lt(scores, 32).should be_nil
+
+        scores.find_lt(32).should be_nil
+      end
+    end
+
+    describe ".find_le" do
+      it "should return rightmost value less than or equal to x" do
+        Bisect.find_le(scores, 65).should eq 33
+        Bisect.find_le(scores, 70).should eq 70
+        Bisect.find_le(scores, 89).should eq 89
+
+        scores.find_le(65).should eq 33
+        scores.find_le(70).should eq 70
+        scores.find_le(89).should eq 89
+      end
+
+      it "should return nil if value less than or equal to x does not exist" do
+        Bisect.find_le(scores, 32).should be_nil
+
+        scores.find_le(32).should be_nil
+      end
+    end
+  end
+
 end
