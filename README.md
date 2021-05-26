@@ -3,7 +3,7 @@
 Provides helpers for dealing with sorted Arrays.
 It uses binary search to reduce the number of comparisons.
 
-[![Build Status](https://travis-ci.org/spider-gazelle/bisect.svg?branch=master)](https://travis-ci.org/spider-gazelle/bisect)
+[![CI](https://github.com/spider-gazelle/bisect/actions/workflows/ci.yml/badge.svg)](https://github.com/spider-gazelle/bisect/actions/workflows/ci.yml)
 
 
 Usage
@@ -78,4 +78,3 @@ scores.find_ge(70) #=> 70
 scores.find_lt(70) #=> 33
 scores.find_le(70) #=> 70
 ```
-
