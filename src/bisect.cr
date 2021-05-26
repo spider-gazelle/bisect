@@ -83,8 +83,8 @@ module Bisect
 
   # Find leftmost value greater than x
   def find_gt(a, x)
-     i = bisect_right(a, x)
-     i != a.size ? a[i] : nil
+    i = bisect_right(a, x)
+    i != a.size ? a[i] : nil
   end
 
   # Find leftmost item greater than or equal to x
@@ -96,12 +96,12 @@ module Bisect
   # Find rightmost value less than x
   def find_lt(a, x)
     i = bisect_left(a, x)
-    i > 0 ? a[i-1] : nil
+    i > 0 ? a[i - 1] : nil
   end
 
   # Find rightmost value less than or equal to x
   def find_le(a, x)
     i = bisect_right(a, x)
-    i > 0 ? a[i-1] : nil
+    i > 0 ? a[i - 1] : nil
   end
 end

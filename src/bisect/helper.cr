@@ -40,5 +40,4 @@ module Bisect::Helper
   def find_le(x)
     Bisect.find_le(self, x)
   end
-
 end

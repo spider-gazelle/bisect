@@ -217,5 +217,4 @@ describe Bisect do
       end
     end
   end
-
 end
